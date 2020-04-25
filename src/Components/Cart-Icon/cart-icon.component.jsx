@@ -9,7 +9,7 @@ import { createStructuredSelector } from 'reselect';
 
 const CartIcon = ({ toggleCart, itemCount }) => (
     <div className="cart-icon" onClick={toggleCart}>
-        <i class="gg-shopping-bag shopping-icon"></i>
+        <i className="gg-shopping-bag shopping-icon"></i>
         <span className="item-count">{itemCount}</span>
     </div>
 )
