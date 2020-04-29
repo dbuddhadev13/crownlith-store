@@ -8,15 +8,15 @@ import WithSpinner from '../../Components/With-Spinner/with-spinner.component.js
 
 import { createStructuredSelector } from 'reselect';
 import { selectIsCollectionFetching, selectIsCollectionLoaded } from '../../redux/shop/shop.selector.js';
-import { fetchCollectionsStartAsync } from '../../redux/shop/shop.action.js';
+import { fetchCollectionsStart } from '../../redux/shop/shop.action.js';
 
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CategoryPageWithSpinner = WithSpinner(CategoryPage)
 
 class ShopPage extends Component {
     componentDidMount() {
-        const { fetchCollectionsStartAsync } = this.props;
-        fetchCollectionsStartAsync();
+        const { fetchCollectionsStart } = this.props;
+        fetchCollectionsStart();
     }
 
     render () {
@@ -36,7 +36,7 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()) 
+    fetchCollectionsStart: () => dispatch(fetchCollectionsStart()) 
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
